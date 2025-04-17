@@ -369,41 +369,6 @@ Compared with ShowUI-Qwen2.5-VL-3B that fine-tunes the Qwen2.5-VL-3B model using
   </div> -->
 </template>
 
-<script setup>
-import Dialog from './Dialog.vue'
-
-import { onMounted, ref } from 'vue'
-
-const dataset1 = ref([])
-const loadData1 = async () => {
-  const resp1 = await fetch('./data/demo-100k.json')
-  dataset1.value = await resp1.json()
-}
-
-const dataset2 = ref([])
-const loadData2 = async () => {
-  const resp2 = await fetch('./data/demo-1m.json')
-  dataset2.value = await resp2.json()
-}
-
-const dataset3 = ref([])
-const loadData3 = async () => {
-  const resp3 = await fetch('./data/demo-bench.json')
-  dataset3.value = await resp3.json()
-}
-
-onMounted(() => {
-  loadData1(),
-    loadData2(),
-    loadData3()
-})
-</script>
-
-
-
-
-
-
 <style scoped>
 .main {
   text-align: center;
